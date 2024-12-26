@@ -1,0 +1,12 @@
+The issue is resolved by ensuring that the parent element has an explicitly defined width.  For example, instead of relying on the parent element inheriting width implicitly, set a width on the parent:
+
+```css
+.parent {
+  width: 500px; /* Explicitly define parent width */
+}
+
+.child {
+  width: calc(100% - 10px);
+}
+```
+Alternatively, if the parent's width should be dynamic, but you still want to calculate the child's width relative to it, use `vw` or `vh` units to account for the viewport's dimensions, which are reliable for calculations.
